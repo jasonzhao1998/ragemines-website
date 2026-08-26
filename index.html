@@ -862,13 +862,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <input name="animation" type="hidden">
 <script>
-  // Live player count via mcstatus.io: pings the network proxy and shows the online count.
+  // Live player count via mcstatus.io: pings both servers and sums the online counts.
   (function () {
     var badge = document.getElementById('serverStatus');
     var label = document.getElementById('playerCount');
     if (!badge || !label) return;
 
-    var HOSTS = ['mc.ragemines.com'];
+    var HOSTS = ['play.ragemines.com', 'ragemines.minekeep.gg'];
 
     // Resolve to the server's online count, or null if it's offline/unreachable.
     function ping(host) {
